@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WalkWell — Sign in / Sign up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="page">
+
+    <!-- ===================== HERO PANEL ===================== -->
+    <aside class="hero" aria-hidden="true">
+      <div class="hero-inner">
+        <div class="brand">
+          <span class="brand-mark">🚶</span>
+          <span class="brand-name">WalkWell</span>
+        </div>
+
+        <div class="hero-copy">
+          <h1>Walk your way<br/>to wellness.</h1>
+          <p>Track your steps, build healthy habits and feel great — one walk at a time.</p>
+        </div>
+
+        <!-- Inline SVG walking illustration -->
+        <div class="hero-art">
+          <svg viewBox="0 0 320 220" width="100%" height="100%" role="img" aria-label="Person walking">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#7ee8c2"/>
+                <stop offset="1" stop-color="#4aa8ff"/>
+              </linearGradient>
+            </defs>
+            <circle cx="255" cy="60" r="46" fill="url(#g1)" opacity="0.55"/>
+            <circle cx="70" cy="170" r="60" fill="url(#g1)" opacity="0.30"/>
+            <rect x="40" y="185" width="240" height="8" rx="4" fill="#0b3d4d" opacity="0.18"/>
+            <!-- walker -->
+            <g fill="none" stroke="#0b3d4d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="150" cy="62" r="14" fill="#0b3d4d" stroke="none"/>
+              <line x1="150" y1="76" x2="150" y2="132"/>
+              <line x1="150" y1="132" x2="122" y2="182"/>
+              <line x1="150" y1="132" x2="178" y2="182"/>
+              <line x1="150" y1="92" x2="118" y2="112"/>
+              <line x1="150" y1="92" x2="182" y2="112"/>
+            </g>
+            <path d="M60 70 h40" stroke="#0b3d4d" stroke-width="6" stroke-linecap="round" opacity="0.3"/>
+            <path d="M60 90 h26" stroke="#0b3d4d" stroke-width="6" stroke-linecap="round" opacity="0.2"/>
+          </svg>
+        </div>
+
+        <div class="hero-foot">
+          <span class="dot"></span> 120,000+ happy walkers
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================== FORM PANEL ===================== -->
+    <main class="form-panel">
+      <div class="card">
+        <div class="brand brand-mobile">
+          <span class="brand-mark">🚶</span>
+          <span class="brand-name">WalkWell</span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist" aria-label="Authentication">
+          <span class="tab-slider" aria-hidden="true"></span>
+          <button class="tab is-active" data-tab="login" role="tab" aria-selected="true">Sign in</button>
+          <button class="tab" data-tab="signup" role="tab" aria-selected="false">Sign up</button>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+        <!-- ================= LOGIN FORM ================= -->
+        <form id="login-form" class="form active" novalidate>
+          <h2>Welcome back</h2>
+          <p class="sub">Sign in to continue your journey.</p>
+
+          <label class="field">
+            <span class="label">User ID</span>
+            <input type="text" name="userId" id="login-userId" autocomplete="username" placeholder="your_user_id" required />
+            <span class="error-msg" data-for="login-userId"></span>
+          </label>
+
+          <label class="field">
+            <span class="label">Password</span>
+            <div class="pw-wrap">
+              <input type="password" name="password" id="login-password" autocomplete="current-password" placeholder="••••••••" required />
+              <button type="button" class="pw-toggle" data-target="login-password" aria-label="Show password">👁</button>
+            </div>
+            <span class="error-msg" data-for="login-password"></span>
+          </label>
+
+          <div class="row-between">
+            <label class="remember">
+              <input type="checkbox" id="remember" />
+              <span>Remember me</span>
+            </label>
+            <a class="link" href="#" data-info="Forgot password? Contact support.">Forgot password?</a>
+          </div>
+
+          <button class="btn" type="submit">
+            <span class="btn-text">Sign in</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <!-- ================= SIGNUP FORM ================= -->
+        <form id="signup-form" class="form" novalidate>
+          <h2>Create account</h2>
+          <p class="sub">Start your walking journey today.</p>
+
+          <label class="field">
+            <span class="label">User ID</span>
+            <input type="text" name="userId" id="signup-userId" autocomplete="username" placeholder="your_user_id" required />
+            <span class="error-msg" data-for="signup-userId"></span>
+          </label>
+
+          <label class="field">
+            <span class="label">Full name</span>
+            <input type="text" name="name" id="signup-name" autocomplete="name" placeholder="Jane Doe" required />
+            <span class="error-msg" data-for="signup-name"></span>
+          </label>
+
+          <label class="field">
+            <span class="label">Password</span>
+            <div class="pw-wrap">
+              <input type="password" name="password" id="signup-password" autocomplete="new-password" placeholder="At least 8 characters" required />
+              <button type="button" class="pw-toggle" data-target="signup-password" aria-label="Show password">👁</button>
+            </div>
+            <span class="error-msg" data-for="signup-password"></span>
+          </label>
+
+          <label class="field">
+            <span class="label">Confirm password</span>
+            <div class="pw-wrap">
+              <input type="password" name="confirmPassword" id="signup-confirm" autocomplete="new-password" placeholder="Re-enter password" required />
+              <button type="button" class="pw-toggle" data-target="signup-confirm" aria-label="Show password">👁</button>
+            </div>
+            <span class="error-msg" data-for="signup-confirm"></span>
+          </label>
+
+          <button class="btn" type="submit">
+            <span class="btn-text">Create account</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <p class="terms">By continuing you agree to our <a href="#" data-info="Terms of Service">Terms</a> &amp; <a href="#" data-info="Privacy Policy">Privacy Policy</a>.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

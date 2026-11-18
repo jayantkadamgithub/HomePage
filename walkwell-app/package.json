@@ -1,0 +1,27 @@
+{
+  "name": "walking-app-login",
+  "version": "1.0.0",
+  "description": "Sign-in and sign-up page for a Walking Application (frontend HTML/CSS + Node.js + Oracle DB)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "test": "jest --runInBand",
+    "check": "node --check src/server.js && node --check src/config/db.js && node --check src/controllers/authController.js && node --check src/routes/auth.js && node --check public/js/app.js"
+  },
+  "keywords": ["walking", "login", "signup", "oracle", "express"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "oracledb": "^6.5.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
