@@ -90,7 +90,8 @@ async function login(req, res, next) {
     const user = result.rows && result.rows[0];
 
     if (!user) {
-      await logAttempt(userId, ip, userAgent, 'FAILED');
+      // No signup_dtls row exists, so an audit insert would violate FK_LOGIN_USER.
+      // Nothing to attach the attempt to — return 401 without logging.
       return res.status(401).json({ ok: false, message: 'Invalid credentials.' });
     }
 

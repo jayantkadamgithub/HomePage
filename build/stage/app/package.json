@@ -12,6 +12,13 @@
   "keywords": ["walking", "login", "signup", "oracle", "express"],
   "author": "",
   "license": "MIT",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/",
+      "/walkwell-app/"
+    ]
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
